@@ -68,7 +68,7 @@ def get_response(user_input):
 
 #app config
 st.set_page_config(page_title="Chatbot Website-based", page_icon="*")
-st.title("Chat Website-based")
+st.title("Chatbot Website-based")
 
 #sidebar
 with st.sidebar:
