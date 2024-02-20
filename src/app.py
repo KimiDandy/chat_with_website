@@ -67,28 +67,28 @@ def get_response(user_input):
   return response['answer']
 
 #app config
-st.set_page_config(page_title="Chat with Website", page_icon="*")
-st.title("Chat with Website")
+st.set_page_config(page_title="Chatbot Website-based", page_icon="*")
+st.title("Chat Website-based")
 
 #sidebar
 with st.sidebar:
   st.header("Settings")
-  website_url = st.text_input("Website URL")
+  website_url = st.text_input("URL Website")
 
 if website_url is None or website_url =="":
-  st.info("Please enter a website url")
+  st.info("Masukkan URL Website")
 
 else:
   # session state
   if "chat_history" not in st.session_state:
     st.session_state.chat_history = [
-      AIMessage(content="Hello, I am a chatbot. How can i help you?")
+      AIMessage(content="Halo, aku adalah Chatbot. Apa ada yang bisa saya bantu?")
     ]
   if "vector_store" not in st.session_state:
     st.session_state.vector_store = get_vectorstore_from_url(website_url)
 
   #user input
-  user_query = st.chat_input("Type your message here")
+  user_query = st.chat_input("Masukkan prompt di sini")
   if user_query is not None and user_query != "":
 
     response = get_response(user_query)
